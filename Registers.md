@@ -8,6 +8,7 @@ Registerlar işlemci'nin çalıştığı esnada kullanılan değişkenlerdir. Re
 EAX,EBX,ECX,EDX,EBP,ESP,ESI,EDI,EIP,EFLAGS
 
 16 Bit Registers:
+
 AH AL
 BH BL
 CH CL
