@@ -2,7 +2,7 @@
 
 Registerlar Nedir?
 
-Registerler işlemci çalışması sırasında kullanılan değişkenlerdir. Bellekteki verilere ulaşmak Registerler işlemci çekirdeğindedir ve bu yüzden istenen işlemi hızlı bir şekilde işleme alabilmektedir. Sınırlı sayıda bulunurlar. Registerler genel amaçlı kullanılabilecekleri gibi özel görevler içinde kullanılabilir.
+Registerlar işlemci çalışması sırasında kullanılan değişkenlerdir. Bellekteki verilere ulaşmak Registerler işlemci çekirdeğindedir ve bu yüzden istenen işlemi hızlı bir şekilde işleme alabilmektedir. Sınırlı sayıda bulunurlar. Registerler genel amaçlı kullanılabilecekleri gibi özel görevler içinde kullanılabilir.
 
 32 Bit Registers:
 EAX,EBX,ECX,EDX,EBP,ESP,ESI,EDI,EIP,EFLAGS
