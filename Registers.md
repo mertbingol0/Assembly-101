@@ -35,21 +35,37 @@ AH,AL,BH,BL,CH,CL,DH,DL
 
 Şimdi bu Registerlarımızın ne olduklarını açıklayalım.
 AX : Accumulator Register, Dört işlemlerde kullanılır.
+
 BX : Base Register, Memory lokasyonlarında adres göstericisi olarak kullanılır, yani index registeri gibi kullanılabilir.
+
 CX : Counter Register, Loop işlemlerinde sayaç olarak kullanılır, döngü kaç defa daha dönecek bunun sayısını tutar.
+
 DX : Data Register, Donanım ile yapılan giriş çıkış işlemlerinde kullanılır.
+
 CS : Code Segment Register, Segmentler bellekte bir alt bölümü işaret ederler. En önemli segment kod segmentdir. İçinde yazdığımız programın komutları yer alır. Hem programcı hemde kullanılan işletim sistemi kod segmentteki komutlar üzerine başka dataların yazılmayacağının garantisini almalıdır. Aksi taktirde programımız garip hatalar verir ve kitlenir. Programların sağlıklı çalışmaları için Code Segment içeriği en önemli noktadır.
+
 DS : Data Segment Register, Programımızı yazarken kullandığımız değişkenler, arraylar ayrıca çalışma anında oluşturulan değişken tiplerinin tamamı bu segment altında tutulur.
+
 SS : Stack Segment Register, Stack özel bir data segment tipidir. Alt programlardan, Fonksiyonlardan kodlar yürütülmeden önce gerekli değişkenler bu segmente sadece bu amaçla kullanılan bir Assembly komutu ile alınırlar. Daha sonra çağırma (CALL) işlemi yapılır. Önemli olan çalışma prensibini anlamaktır. Data segmentlerde olduğu gibi istenilen adresden veri çekebilmektedir. Farkı ise stack'e yollanan son verinin çağırılma esnasında ilk olarak geri dönmesidir. Son giren-ilk çıkar mantığı. Veriler stackin sonundan başına doğru alınırlar.(Bir kutuya 10 tane kitap koyduğunuzu düşünün. bu kitaplardan hangisini ilk koyarsanız en son onu çıkartacaksınız fakat hangisini en son koyarsanız ilk onu çıkartacaksınız). Stack'e son yollanan veri "SP" isimli Stack Pointerla işaret edilir.
+
 ES : Extra Data Segment Register, Data segment ile aynı özelliklere sahiptir. Özel olarak bu segmenti kullanan birkaç komut bulunmaktadır.
+
 FS,GS : Bu segment registerleri ihtiyaç olduğu zaman kullanılmaktadır. Aslında ek olarak kullanılan Data Segment Registerleridir.
+
 BP : Base Pointer, Stack segmentin başlangıç noktasını gösterir. Yani genelde içeriği sıfırdır.
+
 SP : Stack Pointer, Stack segment içine gönderilmiş olan son değerin adresini gösterir. Stack içine veriler yollandıkça değeri azalır çünkü veri segmentin sonundan başına doğru alınır. Veriler stackdan çekildikçe değeri artar, böylece eski verileri gösterir.
+
 Not: BP ve SP aslında SI ve DI gibi segmentler içindeki verinin adresini gösterirler. Stack Segmentin özel bir çalışma şekli olduğu için bu Pointer registerleri özel olarak sadece Stack Segmentin sağlıklı çalışması için görev yapmaktadır.
+
 SI : Source Index, Data segment ve/veya istenirse başına küçük bir tanımlama eklenerek diğer data segmentlerdeki verileri de göstermek için kullanılan bir index (işaretçi) registerdir.
+
 DI : Destination Index, SI ile tamamen aynı özelliklere sahiptir. Fakat SI ve DI bazı string komutları tarafından kaynak ve hedef işaretçisi olarak da kullanılır.
+
 IP : Bir pointer registerdir. Çok özel bir pointer'dır. Code Segment içinde işlenecek bir sonraki komutun yerini işaret eder. Yaptığınız işten emin olmadan üzerinde oynama yapmamalısınız.(Buffer Owerflow zafiyetlerinde bu register'a odaklanılır.)
+
 FLAGS : 32 bitlik yine çok özel bir işlevi olan registerdir. Bu registerin içerisindeki bitler çok önemlidir. Bazı bitler anlamsızdır, diğerleri ise daha önce işlenen komutların sonuçları ile ilgili bilgiler verir. Örneğin CMP komutu ile iki sayı karşılaştırılır ise sayıların eşit olma veya birinin diğerine göre büyük olması bu register içindeki bazı bitleri 1 (set) veya 0 (reset) durumuna getirecektir. Daha sonra kullanılacak bir dallanma komutu ile bu flaglar kontrol edilerek sonuca göre belirli adreslere dallanmalar yapılır. Bazı komutlar işleyişleri sırasında bu registeri gizli olarak kullanır.
+
 Aşağıda hangi Segmentlerin hangi pointer registerlar ile kullanılacakları gösterilmektedir:
 
 CS:IP
