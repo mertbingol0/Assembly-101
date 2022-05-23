@@ -5,6 +5,7 @@ Registerlar Nedir?
 Registerlar işlemci'nin çalıştığı esnada kullanılan değişkenlerdir. Registerlar işlemci çekirdeğindedir ve bu yüzden istenen işlemi hızlı bir şekilde işleme alabilmektedirler. Sınırlı sayıda bulunurlar. Registerler genel amaçlı kullanılabilecekleri gibi özel görevler içinde kullanılabilir.
 
 32 Bit Registers:
+
 EAX,EBX,ECX,EDX,EBP,ESP,ESI,EDI,EIP,EFLAGS
 
 16 Bit Registers:
